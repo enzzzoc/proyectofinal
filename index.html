@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi propia página</title>
+    <!-- Fuente web de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Encabezado fijo -->
+    <header>
+        <div class="title-container">
+            <h1>Bienvenido a la página de Enzo Catrin</h1>
+            <img src="logocurza.png" alt="Logo CURZA" class="logo">
+        </div>
+    </header>    
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="acercade.html">Acerca de</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="juegos.html">Juegos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="inicio">
+            <h2>Acerca de mí</h2>
+            <article class="acerca-de">
+                <p class="sticky-header">Estudiante de la tecnicatura en desarrollo web, cursando el primer año.</p>
+                <p>Busco aprender y aplicar nuevos conocimientos para mejorar mis habilidades.</p>
+                <p>Aspiro a seguir desarrollándome profesionalmente en este ámbito.</p>
+            </article>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Enzo Catrin.</p>
+        <p>Universidad del Comahue.</p>
+        <p>Complejo Universitario Regional Zona Atlántica y Sur.</p>
+    </footer>
+
+    <!-- Flecha hacia arriba -->
+    <button onclick="scrollToTop()" class="back-to-top" title="Volver al inicio">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

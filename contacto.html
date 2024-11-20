@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de tener el archivo de estilos -->
+    <body>
+        <!-- Encabezado fijo con título y logo animado -->
+        <header>
+            <div class="title-container">
+                <h1>Página Personal de Enzo Catrin</h1>
+                <img src="logocurza.png" alt="Logo CURZA" class="logo">
+            </div>
+        </header>
+    
+        <!-- Barra de navegación -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="acercade.html">Acerca de</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="juegos.html">Juegos</a></li>
+
+            </ul>
+        </nav>
+    
+   <style>
+        /* Estilos para la página de contacto */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #a625ce;
+        }
+        h2 {
+            color: #e6e2e0; /* Color marrón oscuro */
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #121d14; /* Color marrón oscuro */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #99f396; /* Color dorado */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #914fa1;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Contacto</h2>
+
+<form id="contactForm">
+    <label for="nombre">Nombre (requerido):</label>
+    <input type="text" id="nombre" name="nombre" maxlength="20" required>
+
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido" maxlength="20">
+
+    <label for="email">Email (requerido):</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" name="telefono" placeholder="Ejemplo: 1234567890" onfocus="this.placeholder=''">
+
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" name="edad" min="16" max="120" required>
+
+    <label for="direccion">Dirección:</label>
+    <textarea id="direccion" name="direccion" rows="3"></textarea>
+
+    <label for="provincia">Provincia:</label>
+    <input type="text" id="provincia" name="provincia" list="provincias">
+    <datalist id="provincias">
+        <option value="Chubut">
+        <option value="Neuquén">
+        <option value="Río Negro">
+        <option value="Santa Cruz">
+        <option value="Tierra del Fuego">
+    </datalist>
+
+    <label for="codigo_postal">Código Postal:</label>
+    <input type="text" id="codigo_postal" name="codigo_postal" pattern="[A][0-9]{4}[A-Z]{3}" title="Formato: A1234ABC" required>
+
+    <fieldset>
+        <legend>Método preferido de contacto:</legend>
+        <label><input type="radio" name="contacto" value="correo electrónico" checked> Correo Electrónico</label>
+        <label><input type="radio" name="contacto" value="correo postal"> Correo Postal</label>
+        <label><input type="radio" name="contacto" value="teléfono"> Teléfono</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Tipo de suscripción:</legend>
+        <label><input type="checkbox" name="suscripcion" value="noticias"> Noticias</label>
+        <label><input type="checkbox" name="suscripcion" value="promociones"> Promociones</label>
+        <label><input type="checkbox" name="suscripcion" value="alertas" checked> Alertas</label>
+        <label><input type="checkbox" name="suscripcion" value="eventos"> Eventos</label>
+    </fieldset>
+
+    <button type="button" onclick="cargarDatos()">Cargar</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Campo</th>
+            <th>Valor</th>
+        </tr>
+    </thead>
+    <tbody id="tablaDatos">
+        <!-- Aquí se rellenarán los datos del formulario -->
+    </tbody>
+</table>
+
+<script>
+    function cargarDatos() {
+        const nombre = document.getElementById('nombre').value;
+        const apellido = document.getElementById('apellido').value;
+        const email = document.getElementById('email').value;
+        const telefono = document.getElementById('telefono').value;
+        const edad = document.getElementById('edad').value;
+        const direccion = document.getElementById('direccion').value;
+        const provincia = document.getElementById('provincia').value;
+        const codigoPostal = document.getElementById('codigo_postal').value;
+        const contacto = document.querySelector('input[name="contacto"]:checked').value;
+        const suscripcion = Array.from(document.querySelectorAll('input[name="suscripcion"]:checked'))
+                                 .map(el => el.value).join(', ');
+
+        const tabla = document.getElementById('tablaDatos');
+        tabla.innerHTML = `
+            <tr><td>Nombre</td><td>${nombre}</td></tr>
+            <tr><td>Apellido</td><td>${apellido}</td></tr>
+            <tr><td>Email</td><td>${email}</td></tr>
+            <tr><td>Teléfono</td><td>${telefono}</td></tr>
+            <tr><td>Edad</td><td>${edad}</td></tr>
+            <tr><td>Dirección</td><td>${direccion}</td></tr>
+            <tr><td>Provincia</td><td>${provincia}</td></tr>
+            <tr><td>Código Postal</td><td>${codigoPostal}</td></tr>
+            <tr><td>Método de Contacto</td><td>${contacto}</td></tr>
+            <tr><td>Tipo de Suscripción</td><td>${suscripcion}</td></tr>
+        `;
+    }
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Enzo Catrin.</p>
+        <p>Universidad del Comahue.</p>
+        <p>Complejo Universitario Regional Zona Atlántica y Sur.</p>
+    </footer>
+</script>
+ <!-- Flecha hacia arriba -->
+ <button onclick="scrollToTop()" class="back-to-top" title="Volver al inicio">↑</button>
+
+ <script src="script.js"></script>
+</body>
+</html>

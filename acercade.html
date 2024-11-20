@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de Enzo Catrin</title>
+    <!-- Fuente web de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Encabezado fijo con título y logo animado -->
+    <header>
+        <div class="title-container">
+            <h1>Página Personal de Enzo Catrin</h1>
+            <img src="logocurza.png" alt="Logo CURZA" class="logo">
+        </div>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="acercade.html">Acerca de</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="juegos.html">Juegos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal: Sección Acerca de mí -->
+    <main>
+        <section id="acerca-de">
+            <h2>Acerca de Mí</h2>
+            <article class="acerca-de">
+                <p class="sticky-header">Soy alumno de la carrera Desarrollo Web que se dicta en el CURZA.</p>
+                <p>Busco aprender y aplicar nuevos conocimientos para mejorar mis habilidades en desarrollo web.</p>
+                <img src="imagen.jpeg" alt="Foto de Enzo" width="200">
+                <p>Mi objetivo es desarrollarme profesionalmente en el ámbito de la programación.</p>
+                
+                <!-- Currículum abreviado y botón Leer más -->
+                <p id="cv-abreviado">
+                    Experiencia en desarrollo de sitios web y aplicaciones educativas. Conocimiento en HTML, CSS, y JavaScript.
+                </p>
+                
+                <!-- Currículum completo (inicialmente oculto) -->
+                <p id="cv-completo" style="display: none;">
+                    Experiencia en desarrollo de sitios web y aplicaciones educativas. Conocimiento en HTML, CSS, JavaScript, y herramientas de diseño web. 
+                    Experiencia en trabajo colaborativo y en el uso de software libre. Me especializo en la creación de interfaces intuitivas y accesibles para el usuario.
+                </p>
+                
+                <!-- Botón para leer más -->
+                <button onclick="toggleCV()">Leer más</button>
+                
+                <h3>¿Cuál es la relación entre el software libre y la educación?</h3>
+                <p>La libertad del software asume un rol de fundamental importancia en el ámbito educativo...</p>
+            </article>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Enzo Catrin.</p>
+        <p>Universidad del Comahue.</p>
+        <p>Complejo Universitario Regional Zona Atlántica y Sur.</p>
+    </footer>
+
+    <!-- Flecha hacia arriba -->
+    <button onclick="scrollToTop()" class="back-to-top" title="Volver al inicio">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
